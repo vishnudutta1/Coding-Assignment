@@ -116,6 +116,40 @@
 
 
 
+function person(n,a){
+    this.name = n;
+    this.age = a;
+}
+
+function Teacher(s,n,a){
+
+   // person.call(this,n,a)
+    this.subject = s;
+}
+
+function Student(){
+    this.class = "10th";
+}
+
+function Player(){
+    this.sport = "Football";
+}
+
+
+
+let t1 = new Teacher("Chemistry");
+
+console.log(t1.subject)
+
+console.log("t1",t1)
+
+let p1 = new Teacher("DOM","Nrupul",30);
+
+console.log(p1)
+
+
+
+
 
 
 </script>
