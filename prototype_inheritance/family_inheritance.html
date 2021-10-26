@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Family Inheritence</h1>
+</body>
+</html>
+
+<script>
+
+let grandfather = {
+    nature: "caretaking & loving",
+    hairColor: "black"
+}
+
+//Using Oject.create :-
+
+let father = Object.create(grandfather);
+father.height = "tall";
+father.skin = "fair";
+
+let son = Object.create(father);
+son.hobby = "Sports",
+son.fears = "Extreme heights"
+
+console.log("Using Object.create: Son =",son);
+
+
+//------------------------------------------------
+
+//Using Constructor Functions
+
+function CreateFather(h,s) {
+    this.height = h,
+    this.skin = s
+}
+CreateFather.prototype = grandfather;
+let father2 = new CreateFather("tall","fair");
+
+function CreateSon(hb,f) {
+    this.hobby = hb,
+    this.fears = f
+}
+CreateSon.prototype = father2;
+let son2 = new CreateSon("Sports","Extreme heights");
+
+console.log("Using Constructor: Son =",son2);
+
+
+</script>
