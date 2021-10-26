@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Custom Array & Methods</h1>
+</body>
+</html>
+
+<script>
+
+
+
+let arr = new MyArray("San Francisco","Dublin","Sydney", "Toronto");  
+
+function MyArray() {  
+   
+    Object.defineProperty(this, "length", {
+        value: 0,
+        writable: true,
+        enumerable: false    
+    })
+
+
+    this.length = arguments.length;  
+
+    for(let i=0; i<this.length; i++) {
+        this[i] = arguments[i];         
+    }
+}
+
+
+//Purposely making spelling mistakes in method name to differentiate them from in-built methods
+//1-Push method
+MyArray.prototype.poosh = function(value) {
+
+    let index = this.length;
+
+    this[index] = value;
+    this.length++;
+
+}
+arr.poosh("Paris");
+console.log(arr);
+
+
+//2-Reverse method
+MyArray.prototype.rev = function(value) {
+    let a = Object.values(this);
+    console.log(a.reverse()) ;
+}
+arr.rev();
+
+
+//3-Print array in array format
+MyArray.prototype.print = function(value) {
+    let a = Object.values(this);
+    console.log(a);
+}
+arr.print();
+
+
+//4-Return the 1st element rom array
+MyArray.prototype.firstEl = function(value) {
+    let a = Object.values(this);
+    console.log(a[0]);
+}
+arr.firstEl();
+</script>
