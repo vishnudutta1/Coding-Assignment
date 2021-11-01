@@ -1,6 +1,6 @@
 function navbar(){
     return `
-    <div id = "navbar">
+  
         <h3><a href="/">Home</a></h3>
 
         <div id = "options">
@@ -13,7 +13,7 @@ function navbar(){
 
             <h3><a href="#">sign Up</a></h3>
 
-        </div>
+       
     </div>`
 }
 
