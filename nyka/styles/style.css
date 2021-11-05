@@ -8,39 +8,41 @@
             height: 20%;
             margin-left: 50px;
             margin-top: 20%;
-            border: palevioletred solid 5px;
+           
            
            
         }
 
         #mblImg{
           width: 150%;
-          border: palevioletred solid 5px;
+         
         }
 
         #MblNumb{
             width: 70%;
             height: 50px;
-            border: palevioletred solid 5px;
+            
         }
         button{
             margin-left: -16%;
             width: 16%;
             height: 18%;
-            border: palevioletred solid 5px;
+      
             }
         #div2{
             width: 30%;
             margin-right: 25%;
-            border: palevioletred solid 5px;
+           
         }
         #div1{
             margin-left:8% ;
-            border: palevioletred solid 5px;
+            
         }
 
         #AppDiv{
             display: flex;
-            border: palevioletred solid 5px;
+            
+            margin-top: 3%;
+            margin-right: 25%; ;
 
         }
