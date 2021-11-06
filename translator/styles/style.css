@@ -1,0 +1,31 @@
+
+
+    .main{margin:auto;
+        display: flex; 
+        width:860px}
+   
+       .main >textarea{width:400px; 
+        height:400px ;
+         margin:auto}
+   
+       .main >div{width:400px;
+        height:400px ;
+       margin:auto; 
+       border:1px solid black}
+   
+       #btn_div{text-align: center;
+            margin: 10px;}
+   
+       button{
+   
+           padding:5px 20px;
+       }
+   
+       .cen{text-align: center;
+        margin: auto;
+         margin: 10px;}
+   
+       .cen >div{display:flex}
+       
+       .cen> div > div{margin-left: 340px;}
+   
