@@ -24,9 +24,10 @@
             
         }
         button{
-            margin-left: -16%;
+            margin-left: -18%;
             width: 16%;
             height: 18%;
+            margin-bottom: -5%;
       
             }
         #div2{
@@ -45,4 +46,29 @@
             margin-top: 3%;
             margin-right: 25%; ;
 
+        }
+
+        #Imgplay{
+            width: 20%;
+          
+        }
+        .App{
+            margin-left: 5%;
+           
+            width: 60%;
+            text-align: justify;
+            background-color: white;
+            height: 50%;
+
+        }
+        #imageApp{
+            width: 30%;
+            
+        }
+
+        #butonDiv{
+            margin-right:  ;
+            height:;
+            
+            
         }
