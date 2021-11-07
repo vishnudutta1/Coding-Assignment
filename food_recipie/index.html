@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Recipie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Festive&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        body {
+            background-image: url('https://media.giphy.com/media/3o6Ztq1YD8lONQGdck/giphy.gif');
+            background-size: cover;
+
+
+
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='navbar'>
+
+
+
+
+    </div>
+
+
+
+    <div id='bg'>
+
+
+
+
+
+        <div id='search_div'>
+
+            <div>
+                <div></div>
+
+                <div></div>
+            </div>
+
+            <input type='text' placeholder="Search" id='name' oninput="debun(main,1000)" onclick="tongue()">
+
+
+            <h2 id='headin'>Recipies</h2>
+
+
+        </div>
+
+        <div id='res_box'>
+
+        </div>
+
+
+
+      </div>
+
+
+    </body>
+
+</html>
+
+
+
+
+<script type='module'>
+
+    import navbar from "./components/navbar.js";
+
+    import {getData,append,appendreceipe} from "./scripts/showData.js"
+
+
+    
+
+    console.log(navbar)
+
+    var nav = document.getElementById('navbar')
+
+    nav.innerHTML = navbar()
+
+    var recipie_box = document.getElementById('res_box')
+
+  
+
+
+    window.tongue = () => {
+        recipie_box.style.height = '200px'
+    }
+
+    
+
+
+    window.main = async function () {
+
+        var recipie_box = document.getElementById('res_box')
+        name = document.getElementById('name').value
+
+        if (name.length < 3) { return false }
+
+
+        let x= await getData(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+
+        let t=x.meals
+       
+        appendreceipe(t,recipie_box)
+
+
+
+    }
+   
+ 
+
+
+    var timerId;
+
+
+
+
+    window.debun = function (func, delay) {
+
+
+        if (timerId) { clearTimeout(timerId) }
+
+
+        timerId = setTimeout(() => {
+
+            func()
+
+        }, delay)
+
+    }
+
+</script>
