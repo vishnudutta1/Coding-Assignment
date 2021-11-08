@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        #loginForm {
+            
+            
+        }
+        input {
+            margin-bottom: 15px;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        #formDiv{
+            text-align: center;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <h1>LOGIN</h1>
+     <div id = "formDiv">
+        <form id="loginForm">
+            Email ID: <input type="text" id="email"/>
+            <br>
+            Password: <input type="password" id="password"/>
+        </form>
+        <button onclick="login()">Login</button>
+     </div>
+
+        <script type="text/javascript">
+        
+        function login() {
+            let form = document.getElementById('loginForm');
+            let newEmail = form.email.value;
+            let newPassword = form.password.value;
+            let users = JSON.parse(localStorage.getItem('users'));
+            let loggedIn = false;
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == newEmail && users[i].password == newPassword) {
+                    loggedIn = true;
+                    alert('Login Successfull');
+                    window.location.href = 'menu.html';
+                    break;
+                }
+            }
+            if (!loggedIn) {
+                alert('Invalid Credentials');
+            }
+        }
+        </script>
+    </body>
+</html>

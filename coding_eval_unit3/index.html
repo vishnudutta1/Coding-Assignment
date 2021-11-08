@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-color: powderblue;}
+        #navigation {
+            height: 50px;
+            background-color:chocolate;
+        }
+        #navigation > button {
+            float: right;
+            margin: 15px;
+            background-color: cyan;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="navigation">
+            <button onclick="login()">Login</button>
+            <button onclick="signup()">Signup</button>
+            <button onclick="menu()">Menu</button>
+        </div>
+        <script type="text/javascript">
+        function login() {
+            window.location.href = 'login.html';
+        }
+        function signup() {
+            window.location.href = 'signup.html';
+        }
+        function menu() {
+            window.location.href = 'menu.html';
+        }
+        </script>
+    </body>
+</html>

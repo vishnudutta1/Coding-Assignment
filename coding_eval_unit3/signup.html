@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        #signupForm {
+            width: 19%;
+        }
+        input {
+            margin-bottom: 15px;
+        }
+        h1 {
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>SIGNUP</h1>
+        <form id="signupForm">
+            Name: <input type="text" id="name"/>
+            Email ID: <input type="text" id="email" />
+            Password: <input type="password" id="password" />
+        </form>
+        <button onclick="signup()">Signup</button>
+
+        <script type="text/javascript">
+        function signup() {
+            let form = document.getElementById("signupForm");
+            let name = form.name.value;
+            let email = form.email.value;
+            let password = form.password.value;
+            let newUser = {
+                name,
+                email,
+                password,
+            }
+            if(name == "" || email == "" || password == "") {
+                alert('Please fill in all the details.')
+            } else {
+                let users = localStorage.getItem('users');
+                if(users == null) {
+                    users = [];
+                } else {
+                    users = JSON.parse(users);
+                }
+                users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('Signup Successfull.');
+                window.location.href = 'login.html';
+            }
+        }
+
+        </script>
+    </body>
+</html>

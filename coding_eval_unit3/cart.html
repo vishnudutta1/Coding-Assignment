@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        #cartDiv {
+            display: grid;
+            grid-template-columns: 21% 21% 21% 21%;
+            gap: 15px;
+        }
+        #cartDiv > div {
+            border: 1px solid black;
+            height: 300px;
+            max-height: 650px;
+            padding: 5px;
+        }
+        img {
+            width: 80%;
+            height: 25%;
+        }
+        #submitbtn {
+            margin: 15px;
+            width: 400px;
+            height: 80px;
+        }
+        h1 {
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>CART</h1>
+        <button onclick="submitOrder()" id="submitbtn">Submit Order</button>
+        <div id="cartDiv">
+
+        </div>
+        
+
+        <script type="text/javascript">
+        let carts = JSON.parse(localStorage.getItem('cart'));
+        carts.forEach(function (element) {
+            let div = document.createElement('div');
+            let p1 = document.createElement('p');
+            p1.textContent = element.name;
+            let p2 = document.createElement('p');
+            p2.textContent = `Price: ${element.price}`;
+            let p3 = document.createElement('p');
+            p3.textContent = `Description: ${element.desc}`;
+            let p4 = document.createElement('p');
+            p4.textContent = `Time to Prepare ${element.time}`;
+            let img = document.createElement('img');
+            img.src = element.image;
+            div.append(p1, p2, p3, p4, img);
+            document.getElementById('cartDiv').append(div);
+        })
+        function submitOrder() {
+            let msg1 = "Your order is accepted.";
+            let msg2 = "Your order is being cooked.";
+            let msg3 = "Your order is ready.";
+            let msg4 = "Order out for delivery.";
+            let msg5 = "Order Delivered.";
+
+            setTimeout(function() {
+                alert(msg1);
+            }, 0);
+            setTimeout(function () {
+                alert(msg2);
+            }, 3000);
+            setTimeout(function () {
+                alert(msg3);
+            }, 8000);
+            setTimeout(function () {
+                alert(msg4);
+            }, 10000);
+            setTimeout(function () {
+                alert(msg5);
+            }, 12000);
+        }
+        </script>
+    </body>
+</html>
