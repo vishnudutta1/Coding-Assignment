@@ -1,0 +1,7 @@
+  db.data.find().pretty().sort({"rating":-1})
+
+  db.data.find({"accept_notice_period":"T" }).pretty()
+
+  db.data.find({"work_from_home":"T" }).pretty()
+
+  db.data.find({$and:[ {city:"South Bend"} ,{skill:"InDesign"}] }).pretty()
