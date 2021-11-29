@@ -1,29 +1,35 @@
 function runProgram(input) {
     input = input.trim().split("\n");
     let t = +input[0];
-    let line = 1;
+   console.log(t)
 
-    for(let i = 1; i <= t; i++){
-        let n = +input[line++];
-        console.log(findWays(n));
-    }
+  var i = 1;
+  //var j = 2;
+
+for(var i = 1;i <t;i++){
+  var k = +input[i];
+  i++
+  var arr = input[i].trim().split(" ").map(Number)
+  i++
+  console.log(k,arr)
 }
 
-function findWays(n){
 
-    if(n == 0){
-        return 1;
-    }
-    if(n < 0){
-        return 0;
-    }
+  
+    
 
-    return findWays(n - 1) + findWays(n - 2) + findWays(n - 5);
+
+
 
 }
   if (process.env.USERNAME === "Gaurav") {
-    runProgram(`1
-    5`);
+    runProgram(`3
+    3
+    1 4 5 6 8 9
+    5 
+    1 2 6 7 8
+    1
+    2 3 4 5 6`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

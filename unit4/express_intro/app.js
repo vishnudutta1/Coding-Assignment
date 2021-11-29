@@ -1,25 +1,19 @@
 const express = require("express")
 
-const app = express();
 
+const app = express()
 
-
-
-
-
-app.get('/',(req,res)=> {
-    res.send("home page of get")
-   // console.log("home page  of get")
+app.listen(3333 , () => {
+    console.log("Listening on PORT 3333")
 })
 
 
+const getdata = require("./MOCK_DATA.json")
 
+app.get("/" , (req, res) => {
+    res.send("Welcome to Home page")
+})
 
-
-
-
-
-
-app.listen(1234,function(){
-    console.log("listening on port 1234")
+app.get("/users", (req, res) => {
+    res.send({getdata})
 })
